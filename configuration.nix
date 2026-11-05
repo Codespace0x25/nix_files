@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+  nixpkgs.config.problems.handlers = {
+    "gtk+".broken = "warn"; # or "ignore"
+  };
 
   nixpkgs.config.allowUnfree = true;
   # Use the systemd-boot EFI boot loader.
